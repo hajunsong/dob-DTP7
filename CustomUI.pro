@@ -30,7 +30,6 @@ SOURCES +=\
     dob.cpp
 
 HEADERS  += formcuimain.h \
-    dob.h \
-    matrix.h
+    dob.h
 
 FORMS    += formcuimain.ui

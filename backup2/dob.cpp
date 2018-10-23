@@ -219,21 +219,20 @@ void DOB::run()
             body[i].r_hat = body[i].K*(Y[2*num_body + i] - body[i].p);
         }
 
-        memcpy(Yp_old, Yp, sizeof(double)*3*num_body);
-        memcpy(Y_old, Y, sizeof(double)*3*num_body);
 
+        //        printf("Time : %.7f[s]", t_current);
+        //        for(uint i = 0; i < num_body; i++){
+        //            printf("Position1 : %.10f[rad] ", body[i].qi);
+        //        }
+        //        for(uint i = 0; i < num_body; i++){
+        //            printf("R : %.5f[Nm] ", body[i].r_hat);
+        //        }
+        //        printf("\n");
+
+        memcpy(Yp_old, Yp, sizeof(double)*3*num_body);
         t_current += h;
 
         total_time += timer.elapsed();
-
-        printf("Time : %.7f[s]", t_current);
-        for(uint i = 0; i < num_body; i++){
-            printf("P%d : %.10f[rad] ", i, body[i].qi);
-        }
-        for(uint i = 0; i < num_body; i++){
-            printf("R : %.5f[Nm] ", body[i].r_hat);
-        }
-        printf("\n");
     }
 
     cout << endl;
